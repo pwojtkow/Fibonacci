@@ -11,16 +11,19 @@ package com.capgemini.fibonacci;
  */
 public class Fibonacci {
 
-	public static long fib(int n) {
-		if (n < 0)
+	private static final int MAX_NUMBER_OF_ELEMENT_TO_NOT_LAG_PROGRAM = 18;
+
+	public static long fib (final int n) {
+		if (n < 0) {
 			throw new IllegalArgumentException("Input value below zero");
-		else if(n>18)
+		} else if (n > MAX_NUMBER_OF_ELEMENT_TO_NOT_LAG_PROGRAM) {
 			throw new IllegalArgumentException("Input value too high");
-		
-		if (n == 1 || n == 2)
+		}
+		if (n == 1 || n == 2) {
 			return 1;
-		else if (n > 2)
+		} else if (n > 2) {
 			return fib(n - 2) + fib(n - 1);
+			}
 		return 0;
 	}
 }
